@@ -7,10 +7,12 @@ import Jokes from './components/jokes'
 
 function App() {
   return (
-    <div className="App">
-      <Route exact path="/" component={Login} />
-      <Route path="/users" render={props => privateRoute(Jokes, props)} />
-    </div>
+    <Router>
+      <div className="App">
+        <Route exact path="/" component={Login} />
+        <Route path="/jokes" render={props => privateRoute(Jokes, props)} />
+      </div>
+    </Router>
   );
 }
 

@@ -7,7 +7,7 @@ const initialValues = {
     password: ''
 }
 
-export default function Login () {
+export default function Login (props) {
     const toLogin = (formValues, actions) => {
         axios.post('http://localhost:3300/api/auth/login', {
           username: formValues.username,
@@ -15,10 +15,11 @@ export default function Login () {
         })
           .then( res => {
             console.log(res)
-            localStorage.setItem('token', res.data.payload);
+            localStorage.setItem('token', res.data.token);
+            props.history.push('/jokes')
           })
           .catch( err => {
-            alert(err.message)
+            console.log(err)
           })
         actions.resetForm()
     }

@@ -9,6 +9,7 @@ export default function Jokes () {
         AxiosAuth().get('http://localhost:3300/api/jokes')
           .then(res => {
             setData(res.data);
+            console.log(res.data)
           })
           .catch(err => {
             // console.log(err)
