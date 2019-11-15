@@ -11,7 +11,7 @@ function App() {
       <div className="App">
         <Route exact path="/" component={Login} />
         <Route path="/jokes" render={props => privateRoute(Jokes, props)} />
-      </div>
+      </div>t
     </Router>
   );
 }
