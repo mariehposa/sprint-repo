@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Formik } from 'formik';
+import { Form, Formik, Field } from 'formik';
 import axios from 'axios';
 
 const initialValues = {
@@ -16,7 +16,6 @@ export default function Login () {
           .then( res => {
             console.log(res)
             localStorage.setItem('token', res.data.payload);
-            props.history.push('bubblePage')
           })
           .catch( err => {
             alert(err.message)
