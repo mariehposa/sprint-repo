@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Formik, Field } from 'formik';
 import axios from 'axios';
+import { NavLink } from "react-router-dom";
 
 const initialValues = {
     username: '',
@@ -27,17 +28,22 @@ export default function Login (props) {
     return (
         <div>
             <Formik
-                initialValues={initialValues}
-                onSubmit={toLogin}
-                render = { props => {
-                    return (
-                      <Form>
-                          <Field name="username" placeholder="Enter username" type="text"/>
-                          <Field name="password" placeholder="Enter password" type="text"/>
-                          <button type="submit">Login</button>
-                      </Form>
-                    )
-                }}
+              initialValues={initialValues}
+              onSubmit={toLogin}
+              render = { props => {
+                return (
+                  <Form>
+                      <Field name="username" placeholder="Enter username" type="text"/>
+                      <Field name="password" placeholder="Enter password" type="text"/>
+                      <button type="submit">Login</button>
+                      <div>
+                      <NavLink to="/register" activeStyle={{background:'red', color:'white'}}>
+                        Click here to sign up
+                      </NavLink>
+                      </div>
+                  </Form>
+                )
+              }}
             />
         </div>
     );
