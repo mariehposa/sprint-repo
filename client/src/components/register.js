@@ -34,7 +34,7 @@ export default function Login (props) {
                       <Form>
                           <Field name="username" placeholder="Enter username" type="text"/>
                           <Field name="password" placeholder="Enter password" type="text"/>
-                          <button type="submit">Login</button>
+                          <button type="submit">Register</button>
                       </Form>
                     )
                 }}
